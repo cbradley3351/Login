@@ -26,7 +26,7 @@ function initialize(passport, getUserByEmail, getUserById) {
     authenticateUser))
     passport.serializeUser((user, done) => done(null, user.id))
     passport.deserializeUser((id, done) => {
-        return done(null, getUserById.id(id))
+        return done(null, getUserById(id))
      })
 }
 
